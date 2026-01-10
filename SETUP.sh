@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Quick Setup Script for Brian Omondi Ayieke Portfolio
+
+echo "🚀 Portfolio Setup Script"
+echo "========================"
+echo ""
+
+# Check if git is installed
+if ! command -v git &> /dev/null; then
+    echo "❌ Git is not installed. Please install Git first."
+    exit 1
+fi
+
+echo "✅ Git is installed"
+echo ""
+
+# Initialize git repository
+if [ ! -d ".git" ]; then
+    echo "📝 Initializing Git repository..."
+    git init
+    git add .
+    git commit -m "Initial portfolio commit"
+    echo "✅ Git repository initialized"
+else
+    echo "✅ Git repository already initialized"
+fi
+
+echo ""
+echo "📋 Next Steps:"
+echo "=============="
+echo ""
+echo "1. Create a GitHub repository:"
+echo "   - Go to https://github.com/new"
+echo "   - Name: 'portfolio' or 'brian-portfolio'"
+echo "   - Click 'Create repository'"
+echo ""
+echo "2. Push to GitHub:"
+echo "   git branch -M main"
+echo "   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git"
+echo "   git push -u origin main"
+echo ""
+echo "3. Deploy to Netlify:"
+echo "   - Go to https://netlify.com"
+echo "   - Click 'New site from Git'"
+echo "   - Select your portfolio repository"
+echo "   - Accept defaults and click 'Deploy site'"
+echo ""
+echo "4. Configure in scripts.js:"
+echo "   - Update EMAIL, GITHUB, LINKEDIN, WHATSAPP, CV"
+echo "   - Redeploy to Netlify"
+echo ""
+echo "For detailed instructions, see: DEPLOYMENT_GUIDE.md"
+echo ""
+echo "Happy deploying! 🎉"

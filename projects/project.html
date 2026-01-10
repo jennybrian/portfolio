@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .back-link{color:var(--muted);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px}
+    .back-link:hover{color:var(--accent)}
+    .project-hero{padding:40px 28px 56px;background:#f9fafb;margin-top:0}
+    .project-hero .container{max-width:1000px;margin:0 auto}
+    .project-hero h1{font-size:48px;margin:0 0 10px;font-weight:700;line-height:1.2}
+    .project-hero-desc{color:var(--muted);margin:0 0 18px;max-width:600px;line-height:1.6}
+    .project-tech{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .project-tech span{background:#fff;border:1px solid #e6e6e6;border-radius:6px;padding:6px 10px;font-size:12px;color:var(--muted)}
+    .project-cta{display:flex;gap:12px}
+    .project-cta .btn{padding:10px 16px;font-size:14px}
+    .project-section{padding:40px 28px;background:#fff}
+    .project-section.alt{background:#f9fafb}
+    .project-section .container{max-width:900px;margin:0 auto}
+    .project-section h3{font-size:14px;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 14px;font-weight:700;color:#7a8a99}
+    .project-section p{color:var(--muted);margin:0 0 12px;line-height:1.6}
+    .project-section ul{list-style:none;padding:0;margin:0}
+    .project-section li{color:var(--muted);margin:0 0 8px;padding-left:20px;position:relative}
+    .project-section li:before{content:'';width:6px;height:6px;background:var(--muted);border-radius:50%;position:absolute;left:0;top:7px}
+    .media-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+    .media-item{background:#eee;height:200px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);overflow:hidden}
+    .project-footer-cta{padding:40px 28px;text-align:center;background:#fff;border-top:1px solid #e6e6e6}
+    .project-footer-cta h3{font-size:28px;text-transform:none;letter-spacing:normal;color:#1f2933;margin:0 0 8px;font-weight:600}
+    .project-footer-cta p{color:var(--muted);margin:0 0 16px}
+    .error-message{padding:40px 28px;text-align:center;color:var(--muted)}
+    @media(max-width:700px){
+      .project-hero h1{font-size:32px}
+      .media-gallery{grid-template-columns:1fr}
+      .project-tech{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../">Portfolio</a>
+      <nav class="nav">
+        <a href="../#about">About</a>
+        <a href="../#projects">Projects</a>
+        <a href="../#media">Gallery</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="../#projects" class="back-link">← Back to Projects</a>
+      <h1 id="project-title"></h1>
+      <p class="project-hero-desc" id="project-description"></p>
+      <div class="project-tech" id="project-tech"></div>
+      <div class="project-cta">
+        <a href="#" id="project-live" class="btn btn-primary" target="_blank" rel="noopener" style="display:none;">View Live</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h3>THE PROBLEM</h3>
+      <p id="project-problem"></p>
+    </div>
+  </section>
+
+  <section class="project-section alt">
+    <div class="container">
+      <h3>THE SOLUTION</h3>
+      <p id="project-solution"></p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h3>KEY FEATURES</h3>
+      <ul id="project-features"></ul>
+    </div>
+  </section>
+
+  <section class="project-section alt">
+    <div class="container">
+      <h3>ARCHITECTURE OVERVIEW</h3>
+      <p id="project-architecture"></p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h3>SCREENSHOTS & MEDIA</h3>
+      <div class="media-gallery" id="project-media"></div>
+    </div>
+  </section>
+
+  <section class="project-section alt">
+    <div class="container">
+      <h3>OUTCOMES</h3>
+      <ul id="project-outcomes"></ul>
+    </div>
+  </section>
+
+  <section class="project-footer-cta">
+    <div class="container">
+      <h3>Interested in working together?</h3>
+      <p>Let's discuss how I can help with your next project.</p>
+      <a href="../#contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <small>© <span id="year"></span> All rights reserved.</small>
+      </div>
+      <div class="footer-links">
+        <a href="#" id="footer-github" class="muted">GitHub</a>
+        <a href="#" id="footer-linkedin" class="muted">LinkedIn</a>
+        <a href="#" id="footer-whatsapp" class="muted">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Initialize footer links
+    const CONFIG = {
+      EMAIL: 'brianayieke@gmail.com',
+      GITHUB: 'https://github.com/briankelley',
+      LINKEDIN: 'https://linkedin.com/in/briankelley',
+      WHATSAPP: 'https://wa.me/254725501428'
+    };
+    
+    if(CONFIG.GITHUB){
+      document.getElementById('footer-github').href = CONFIG.GITHUB;
+    }
+    if(CONFIG.LINKEDIN){
+      document.getElementById('footer-linkedin').href = CONFIG.LINKEDIN;
+    }
+    if(CONFIG.WHATSAPP){
+      const whatsappLink = document.getElementById('footer-whatsapp');
+      if(whatsappLink) whatsappLink.href = CONFIG.WHATSAPP;
+    }
+
+    function getQueryParam(name){
+      return new URLSearchParams(window.location.search).get(name);
+    }
+
+    (async ()=>{
+      const slug = getQueryParam('slug');
+      if(!slug){
+        document.body.innerHTML = '<div style="padding:40px 28px;text-align:center;color:var(--muted)"><p>No project specified. <a href="../#projects">Go back to projects</a></p></div>';
+        return;
+      }
+
+      try{
+        const res = await fetch('./projects.json');
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        const list = await res.json();
+        console.log('Loaded projects:', list.map(p=>p.slug));
+        const p = list.find(x=>x.slug===slug);
+        
+        if(!p){
+          console.error('Project with slug "' + slug + '" not found. Available: ' + list.map(x=>x.slug).join(', '));
+          document.body.innerHTML = '<div style="padding:40px 28px;text-align:center;color:var(--muted)"><p>Project not found. <a href="../#projects">Go back to projects</a></p></div>';
+          return;
+        }
+
+        // Hero section
+        document.getElementById('project-title').textContent = p.title;
+        document.getElementById('project-description').textContent = p.description;
+
+        // Tech badges
+        const techContainer = document.getElementById('project-tech');
+        (p.tech||[]).forEach(t=>{
+          const span = document.createElement('span');
+          span.textContent = t;
+          techContainer.appendChild(span);
+        });
+
+        // Live link
+        if(p.live){
+          const liveBtn = document.getElementById('project-live');
+          liveBtn.href = p.live;
+          liveBtn.style.display = 'inline-block';
+        }
+
+        // Content sections
+        document.getElementById('project-problem').textContent = p.problem;
+        document.getElementById('project-solution').textContent = p.solution;
+        document.getElementById('project-architecture').textContent = p.architecture;
+
+        // Features list
+        const featuresList = document.getElementById('project-features');
+        (p.features||[]).forEach(f=>{
+          const li = document.createElement('li');
+          li.textContent = f;
+          featuresList.appendChild(li);
+        });
+
+        // Outcomes list
+        const outcomesList = document.getElementById('project-outcomes');
+        (p.outcomes||[]).forEach(o=>{
+          const li = document.createElement('li');
+          li.textContent = o;
+          outcomesList.appendChild(li);
+        });
+
+        // Media gallery
+        const mediaGallery = document.getElementById('project-media');
+        if((p.media||[]).length === 0){
+          mediaGallery.innerHTML = '<p style="grid-column:1/-1;color:var(--muted)">No media available</p>';
+        } else {
+          (p.media||[]).forEach(m=>{
+            const item = document.createElement('div');
+            item.className = 'media-item';
+            if(m.type==='image' && m.src){
+              const img = document.createElement('img');
+              img.src = m.src;
+              img.alt = m.alt||p.title;
+              img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:6px;';
+              item.appendChild(img);
+            }else if(m.type==='video' && m.embed){
+              const wrap = document.createElement('div');
+              wrap.innerHTML = m.embed;
+              item.appendChild(wrap);
+            }else{
+              item.textContent = 'Media placeholder';
+            }
+            mediaGallery.appendChild(item);
+          });
+        }
+
+        // Update page title
+        document.title = p.title + ' — Portfolio';
+      }catch(e){
+        console.error('Failed to load project:', e);
+        document.body.innerHTML = '<div style="padding:40px 28px;text-align:center;color:var(--muted)"><p>Error loading project. <a href="../#projects">Go back to projects</a></p></div>';
+      }
+
+      // Initialize lightbox
+      const lightbox = document.getElementById('image-lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      if(lightbox){
+        document.addEventListener('click', (e) => {
+          if(e.target.tagName === 'IMG' && e.target.style.objectFit === 'cover'){
+            lightboxImage.src = e.target.src;
+            lightbox.classList.add('active');
+          }
+        });
+
+        if(lightboxClose){
+          lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+          });
+        }
+
+        lightbox.addEventListener('click', (e) => {
+          if(e.target === lightbox){
+            lightbox.classList.remove('active');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if(e.key === 'Escape'){
+            lightbox.classList.remove('active');
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- Image Lightbox Modal -->
+  <div id="image-lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img id="lightbox-image" src="" alt="Expanded view" />
+    </div>
+  </div>
+</body>
+</html>
