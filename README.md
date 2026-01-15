@@ -2,7 +2,7 @@
 
 A modern, professional portfolio website showcasing full-stack web development and AI solutions projects.
 
-## 🎯 Quick Start
+## Quick Start
 
 ### Local Development
 ```bash
@@ -17,7 +17,7 @@ Visit `http://localhost:8000` in your browser.
 ### Deploy to Netlify
 See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for step-by-step instructions.
 
-## 📋 Project Structure
+## Project Structure
 
 - `index.html` — Main landing page with hero, about, projects, gallery, contact sections
 - `styles.css` — All styling, responsive design, and animations
@@ -28,18 +28,18 @@ See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for step-by-step instructions.
 - `netlify.toml` — Netlify deployment configuration
 - `.gitignore` — Git ignore rules
 
-## 🚀 Features
+## Features
 
-✨ **Hero Section** with profile photo, name, and job title
-📱 **Fully Responsive** — Desktop, tablet, and mobile optimized
-🎨 **Modern Design** — Clean, professional aesthetic
-🖼️ **Interactive Gallery** — Lightbox with image expansion
-📝 **Project Cards** — Showcasing 7 complete projects
-🔗 **Project Details** — Full project pages with problem/solution/architecture
-📧 **Contact Form** — Netlify Forms integration
-🖱️ **Image Lightbox** — Click images to expand and inspect layouts
+**Hero Section** with profile photo, name, and job title
+**Fully Responsive** — Desktop, tablet, and mobile optimized
+**Modern Design** — Clean, professional aesthetic
+**Interactive Gallery** — Lightbox with image expansion
+**Project Cards** — Showcasing 7 complete projects
+**Project Details** — Full project pages with problem/solution/architecture
+**Contact Form** — Netlify Forms integration
+**Image Lightbox** — Click images to expand and inspect layouts
 
-## 📝 Adding/Editing Projects
+## Adding/Editing Projects
 
 1. Open `projects/projects.json`
 2. Add or edit project objects with these fields:
@@ -60,7 +60,7 @@ See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for step-by-step instructions.
 4. Update image paths in projects.json
 5. Changes reflect automatically on the site
 
-## ⚙️ Configuration
+## Configuration
 
 Edit `scripts.js` to update:
 ```javascript
@@ -73,19 +73,19 @@ const CONFIG = {
 };
 ```
 
-## 📧 Contact Form Setup
+## Contact Form Setup
 
 1. Deploy to Netlify (see DEPLOYMENT_GUIDE.md)
 2. Form submissions automatically go to your email
 3. Check "Forms" section in Netlify dashboard
 
-## 🌐 Deployment Options
+## Deployment Options
 
 1. **Netlify** (Recommended) — Easiest setup, automatic deploys from GitHub
 2. **Vercel** — Similar to Netlify, great performance
 3. **GitHub Pages** — Free hosting, limited features
 
-👉 **See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.**
+**See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.**
 - Configure `scripts.js` > `CONFIG.FORM_ENDPOINT` with a form endpoint (Formspree, Netlify Forms, or your serverless function). If empty, the form falls back to a `mailto:` link using `CONFIG.EMAIL`.
 
 SEO & Deploy
@@ -95,7 +95,3 @@ SEO & Deploy
 Extensibility
 - Projects rendered from JSON for easy additions without redesign.
 - `projects/project.html` supports images and embedded video if you provide `media` entries.
-
-Notes
-- No external images are included. Replace placeholder media with your screenshots or remove media entries.
-- Colors avoid purple per design requirements.
